@@ -6,7 +6,6 @@ export default defineConfig({
   base: '/cv/',
   plugins: [react(), svgr()],
   server: {
-    port: 3001,
-    open: true
+    port: 3001
   }
 })

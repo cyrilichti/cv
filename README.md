@@ -4,15 +4,18 @@ Mon CV personnel, version web optimisée pour l'impression.
 
 Le CV principal est une **one-page** au format **A4** (210 × 297 mm). Le contenu se modifie dans des fichiers de données, sans toucher aux composants React.
 
-## Installation
+## Lancement avec Docker
+
+```bash
+docker compose up --build
+```
+
+Ouvrir [http://localhost:3001/cv](http://localhost:3001/cv)
+
+## Lancement local
 
 ```bash
 npm install
-```
-
-## Lancement
-
-```bash
 npm start
 ```
 

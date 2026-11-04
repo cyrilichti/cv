@@ -1,0 +1,265 @@
+---
+name: agent-workflows
+description: >-
+  When explicitly invoked with `/agent-workflows` or `$agent-workflows`,
+  install or update Agent Workflows in the current project.
+disable-model-invocation: true
+---
+
+# Agent Workflows
+
+Install or update agent-workflows in the current project.
+
+## Required Context
+
+Reuse any rules already active from the caller. From this Skill's directory,
+load the remaining rules in one `cat` command, omitting paths for active rules.
+Skip the command when all are active:
+
+```sh
+cat ../../rules/default-language.md ../../rules/git-authorization.md ../../rules/skill-activation.md ../../rules/inclusive-wording.md
+```
+
+## Rules
+
+- Treat the root `AGENTS.md` and these `.agents/` directories as fully managed
+  Agent Workflows sources:
+
+  ```text
+  agents
+  commands
+  data
+  goals
+  providers
+  rules
+  skills
+  templates
+  workflows
+  ```
+
+- Replace every fully managed source on installation and update. Do not merge
+  local customizations into them.
+- Treat `.agents/plans` as project-owned content. Never copy source-repository
+  plans into a consuming project or remove consuming-project plans.
+- Do not create commits.
+
+## Preflight
+
+Before any mutation:
+
+1. Work from the consuming project root.
+2. Verify that Git, Node.js, and `npx` are available.
+3. Require the project root to belong to a Git worktree.
+4. Require the index and worktree to be clean, including untracked files.
+   Allow only the bootstrap artifacts created by the documented
+   `npx skills add ... --skill agent-workflows` command:
+   - `.agents/skills/agent-workflows/**`;
+   - the `agent-workflows` entry in `skills-lock.json`.
+
+   Verify that no other path or lock entry changed before treating these as
+   bootstrap artifacts. Stop and list every other dirty path.
+5. Require `.agents`, when present, to be a real directory. Stop when it is a
+   symlink, file, or Git submodule.
+6. Create a temporary working directory outside `.agents`.
+
+## Download
+
+Clone the latest public repository into the temporary directory:
+
+```text
+https://github.com/cyrilichti/agent-workflows.git
+```
+
+Stop before deployment unless the downloaded repository contains:
+
+- `AGENTS.md`;
+- `agent-workflows.example.yaml`;
+- `.gitignore`;
+- `skills-lock.json`;
+- every fully managed directory listed in Rules.
+
+Read the downloaded and consuming `skills-lock.json` files and calculate the
+merged lock before deployment. Require compatible lock-file versions.
+
+Inspect ignored, untracked content inside every fully managed target
+directory. Stop when it contains anything that is neither:
+
+- a path present in the matching downloaded source directory; nor
+- a Skill declared by the calculated merged lock under `.agents/skills`.
+
+This check must include ignored files. Ordinary Git status is insufficient for
+this guard.
+
+## Deploy
+
+For every fully managed directory listed in Rules:
+
+1. remove the matching directory under `.agents` completely;
+2. recreate it from the matching downloaded source directory.
+
+Create the consuming project's root `AGENTS.md` from the downloaded file.
+Prefix `.agents/` to each backtick-quoted path under a managed directory:
+`workflows/next.md` becomes `.agents/workflows/next.md`, and
+`templates/select-option.md` becomes `.agents/templates/select-option.md`.
+Keep all other text unchanged. Require at least one replacement, verify each
+source and installed path exists, then replace the target file atomically.
+
+Create `.agents/plans` when absent. Otherwise preserve it and all of its
+contents exactly. Do not copy the downloaded `plans` directory. Create
+`.agents/plans/.gitkeep` when that file is absent, and leave every other file
+in `.agents/plans` unchanged.
+
+Do not copy the repository metadata, documentation site, build output,
+dependencies, or unrelated root files.
+
+## Compose Git Ignore Rules
+
+Preserve the consuming project's root `.gitignore`, or create it when absent.
+Derive the Agent Workflows ignore block from the downloaded `.gitignore` rules
+for `plans/*`, `!plans/.gitkeep`, `skills/*`, and every
+`!skills/<native-skill>/` exception. Prefix each derived path with `.agents/`,
+producing the current equivalent of:
+
+```gitignore
+.agents/plans/*
+!.agents/plans/.gitkeep
+
+.agents/skills/*
+!.agents/skills/agent-workflows/
+!.agents/skills/pick/
+!.agents/skills/next/
+!.agents/skills/plan/
+!.agents/skills/write/
+!.agents/skills/refine/
+!.agents/skills/work/
+!.agents/skills/ready/
+!.agents/skills/inspect/
+!.agents/skills/done/
+```
+
+Treat only these consuming-project patterns as installer-owned:
+
+```text
+.agents/plans/*
+!.agents/plans/.gitkeep
+.agents/skills/*
+!.agents/skills/*/
+```
+
+Remove every existing exact line matching one of those patterns, including
+exceptions for native Skills removed from the downloaded version. Append the
+newly derived block once with one blank line around it. Preserve every other
+line and its order. Do not duplicate rules on repeated execution.
+
+Validate with `git check-ignore` that:
+
+- a file below `.agents/plans` other than `.gitkeep` is ignored;
+- `.agents/plans/.gitkeep` is not ignored;
+- a downloaded external Skill declared only in `skills-lock.json` is ignored;
+- every downloaded native Skill is not ignored.
+
+When existing broader rules prevent these outcomes, correct them only when the
+required change is unambiguous. Otherwise stop and report the conflicting rule.
+
+## Merge Skill Dependencies
+
+- When the project lock file is absent, initialize it with the downloaded lock.
+- Preserve project Skill entries not declared by agent-workflows.
+- Add every downloaded Skill entry to the project lock.
+- Replace a project entry when agent-workflows declares the same Skill name.
+- Write the merged JSON atomically.
+
+Then restore all declared dependencies:
+
+```bash
+npx skills experimental_install
+```
+
+Stop and report the command output when dependency installation fails.
+
+## Configure Providers
+
+GitHub uses the official `gh` CLI and GitLab uses the official `glab` CLI.
+Refer users to the setup documentation for the selected provider:
+
+```text
+https://github.com/cli/cli#installation
+https://cli.github.com/manual/gh_auth_login
+https://docs.gitlab.com/cli/installation/
+https://docs.gitlab.com/cli/authentication/
+```
+
+For a self-managed host, the authentication commands are:
+
+```bash
+gh auth login --hostname github.example.com
+glab auth login --hostname gitlab.example.com
+```
+
+For GitHub.com, use `gh auth login`; for GitLab.com, use `glab auth login`.
+
+When `agent-workflows.yaml` already exists:
+
+1. Preserve the configured item provider and every unrelated setting.
+2. When `version.provider` is absent, ask which version provider the
+   project uses with the selection below, then add the selected value.
+3. When `version.provider` is `github` or `gitlab`, preserve it.
+4. When `version.provider` has another value, stop and list the supported
+   values. Do not overwrite the existing value.
+
+When `agent-workflows.yaml` is absent:
+
+1. Ask the user which item provider the project uses:
+
+   ```text
+   question: Which ticket provider does this project use?
+   options:
+   - label: ClickUp
+     value: clickup
+   - label: Linear
+     value: linear
+   ```
+
+2. Ask which version provider the project uses:
+
+   ```text
+   question: Which version-control provider does this project use?
+   options:
+   - label: GitHub
+     value: github
+   - label: GitLab
+     value: gitlab
+   ```
+
+3. Copy the downloaded `agent-workflows.example.yaml` to
+   `agent-workflows.yaml`.
+4. Set `item.provider` and `version.provider` to the selected values.
+
+Use the same version-provider selection when an existing configuration is
+missing `version.provider`.
+
+## Validate
+
+Before reporting success, verify:
+
+- the root `AGENTS.md` differs from the downloaded source only by those
+  `.agents/` prefixes, and all referenced installed paths exist;
+- every fully managed directory equals its downloaded source and contains no
+  obsolete path;
+- `.agents/plans` still contains every pre-existing consuming-project plan;
+- the effective Git ignore behavior matches Compose Git Ignore Rules;
+- the project lock contains every downloaded Skill entry;
+- every declared Skill is installed;
+- `agent-workflows.yaml` exists;
+- `item.provider` is either `clickup` or `linear`.
+- `version.provider` is either `github` or `gitlab`.
+- a repeated deployment of the same downloaded version would produce no
+  filesystem change.
+
+Always remove the temporary download after success or failure.
+
+Report whether agent-workflows was installed or updated, which managed sources
+were replaced, that plans were preserved, the Git ignore rules added, which
+lock entries were added or replaced, and the
+configured item and version providers. Include the selected version CLI's
+installation and authentication prerequisite in the report.
