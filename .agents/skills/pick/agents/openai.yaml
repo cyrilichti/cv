@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pick"
+  short_description: "Select an item and start delivery"
+  default_prompt: "Use $pick to select an item, approve its plan, and start delivery."
