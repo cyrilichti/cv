@@ -1,0 +1,8 @@
+# Copy this file to `agent-workflows.yaml` in a consuming project.
+
+# Supported values: linear, clickup
+item:
+  provider: linear
+# Supported values: github, gitlab
+version:
+  provider: github
