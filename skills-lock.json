@@ -11,19 +11,19 @@
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/api-and-interface-design/SKILL.md",
-      "computedHash": "0d823e9ff32f529f21492a3fd7635fc75b43ff1eb1788d4be0974bfa42e22ae3"
+      "computedHash": "26f5a9e7abfd332d7a2e5887cf19bddd3393f47514c379b36bf227c1f15cdec4"
     },
     "ci-cd-and-automation": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/ci-cd-and-automation/SKILL.md",
-      "computedHash": "f655c44b80ec36532fa058f7b94e7463330b8ccacda35eba05d85c677a4f6a7d"
+      "computedHash": "578b098a7d2352ccdac8b8abdc40eb6803538e81cf8382f138da6188a655087c"
     },
     "code-review-and-quality": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/code-review-and-quality/SKILL.md",
-      "computedHash": "895b57b6fa13a75d182472c1428621cc59fca373723c07c2372ab4ac96307186"
+      "computedHash": "6231479cc74c7ed70a5618b81b3f94034d9806c0319a1a23d15f9b94a368c581"
     },
     "customer-journey-map": {
       "source": "phuryn/pm-skills",
@@ -35,13 +35,13 @@
       "source": "mindrally/skills",
       "sourceType": "github",
       "skillPath": "data-analysis-jupyter/SKILL.md",
-      "computedHash": "1fb56c2f9e59d0af1b84aa84759262932864678a826f9459343de6c2a136a2d9"
+      "computedHash": "5a8110533947c650d5a6f7ceeffd91ceaa1fd885c10341f39e329b62b1187d53"
     },
     "doubt-driven-development": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/doubt-driven-development/SKILL.md",
-      "computedHash": "f6f4c46da613b9631c666976169d5fdddafe33e072377824da224e8712abfb2c"
+      "computedHash": "b13f18a68abf2a1fd0c30adeac9bec0ee551adec9f2a1dc2700f1a6e3eb48092"
     },
     "evaluate-rag": {
       "source": "hamelsmu/evals-skills",
@@ -59,13 +59,13 @@
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/productivity/grilling/SKILL.md",
-      "computedHash": "e40cc1d348f6d935e28f1e24474302d7368f0a400429271a43b35fe154891dc5"
+      "computedHash": "4dd886b0196bf43729d954ae326016f2bd9f5f79d892500b407c33a753362f14"
     },
     "idea-refine": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/idea-refine/SKILL.md",
-      "computedHash": "f4400771e231aeaa6d954cc41ea5845b71d96d8f4d1df5e312849cd75bff97dd"
+      "computedHash": "9fc0ae5d8a074872a636d22f9c6fe71e041b86cddc9fe5af90ef654f5032ec5d"
     },
     "interview-me": {
       "source": "addyosmani/agent-skills",
@@ -77,7 +77,7 @@
       "source": "laravel/boost",
       "sourceType": "github",
       "skillPath": ".ai/laravel/skill/laravel-best-practices/SKILL.md",
-      "computedHash": "c86bfe29764960a7fec1911f311495ca9b614ad1b6de6c0251d62cf64e9943c2"
+      "computedHash": "4067be18f40824b3b4393569c924cfd7aedb40562900b10d9e475b88942d896c"
     },
     "nestjs-best-practices": {
       "source": "ejirocodes/agent-skills",
@@ -95,7 +95,7 @@
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/performance-optimization/SKILL.md",
-      "computedHash": "276aec00aaabae98f4bd6d565745378b498e0d11688315f32179587746b93805"
+      "computedHash": "f0a8e3bdb9b7d199434c2a5dd7cbb7d3cf69d802029cde1ef5daa07bffa27efc"
     },
     "planning-and-task-breakdown": {
       "source": "addyosmani/agent-skills",
@@ -113,13 +113,13 @@
       "source": "mindrally/skills",
       "sourceType": "github",
       "skillPath": "scikit-learn-best-practices/SKILL.md",
-      "computedHash": "e96e5b27f0156e88b33ed3ba55b8b313f781a63309ba9f63cb1eb91d8be50117"
+      "computedHash": "b9947aa802df17bd1f097d4bc48ebbc60f1cb6bdd882a1c0e6129a32c0fbe9d8"
     },
     "security-and-hardening": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/security-and-hardening/SKILL.md",
-      "computedHash": "f79bc2010272830c6d65400cfa5e860edc37af8607f1439a0a88aa3cea111ef1"
+      "computedHash": "23cf7d689a1d844844bba6c2de53acb4749eb6f3bd209762ccc77a75c2ec5f54"
     },
     "seo-geo": {
       "source": "resciencelab/opc-skills",
@@ -131,19 +131,19 @@
       "source": "proyecto26/system-design-skills",
       "sourceType": "github",
       "skillPath": "skills/service-decomposition/SKILL.md",
-      "computedHash": "8613a11ec07d19cc8675c6c8ed63743a16e8fc757a6f52d7849953badcd0e3c5"
+      "computedHash": "a3f665a4dcd4e8409953ab6990ec48701bf967b9fea96cb6eba4489e1f52290f"
     },
     "shadcn": {
       "source": "shadcn/ui",
       "sourceType": "github",
       "skillPath": "skills/shadcn/SKILL.md",
-      "computedHash": "b864a958765563321f485a96f4d59c0bb6539f4286ab6d8b8b66895b7ebd302d"
+      "computedHash": "f615de216e085a84e31593ad0fa9062232adc40cd87b7c7ab2b8e49abf6500be"
     },
     "source-driven-development": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/source-driven-development/SKILL.md",
-      "computedHash": "1397b7866630cda47bb5659d1ebb250012ca930c8217bf12b78200345f3328f6"
+      "computedHash": "d1923bb807f7db157a794f07a590ca639b3789b2f1a5eabef993f8df24791e2a"
     },
     "supabase-postgres-best-practices": {
       "source": "supabase/agent-skills",
@@ -161,7 +161,7 @@
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/systematic-debugging/SKILL.md",
-      "computedHash": "b7b6e98c3bffe371893bdb69845ec61124a65b6a96313dc8d6a2bce4437b13eb"
+      "computedHash": "3589907ee34dc8b1b7223a33fac98ab841a9e42f9960ab4433a832f0c6f00be0"
     },
     "tailwind-4-docs": {
       "source": "lombiq/tailwind-agent-skills",
@@ -173,13 +173,13 @@
       "source": "proffesor-for-testing/agentic-qe",
       "sourceType": "github",
       "skillPath": ".claude/skills/technical-writing/SKILL.md",
-      "computedHash": "312f89d945f10255529c287aa9ce05a995383d85c65f1c0dcfd3e99577a73539"
+      "computedHash": "3a943d005ca08328f7932ba03d744a0bdee14f5defd3cace8551576b29599bfe"
     },
     "test-driven-development": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/test-driven-development/SKILL.md",
-      "computedHash": "3685f4d68f60c5fe97674a069bf589e6723e5196961fca68a26d40b319a4841d"
+      "computedHash": "efb654aa37612ab1e7470e547b06a322c5e1837b6879525e32aa432d1281692b"
     },
     "to-spec": {
       "source": "mattpocock/skills",
@@ -191,7 +191,7 @@
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/engineering/to-tickets/SKILL.md",
-      "computedHash": "5f871bdc46a9212222214ba399be4965374208af1bd7f48f1271bef72841dd31"
+      "computedHash": "bf5e6ebcb4f1272de0c188d5b3901f265a03d1fa9935a21a7a56938e21e2e761"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
@@ -203,7 +203,7 @@
       "source": "antfu/skills",
       "sourceType": "github",
       "skillPath": "skills/vue/SKILL.md",
-      "computedHash": "29ad402cf2ff868b3b43160883fbc42e135223655a41d16092d0d205f2c1ed31"
+      "computedHash": "9c241141e07e836e4f0537c63e8f929fba3767c2997250be38e699f19b75e3f2"
     },
     "web-design-guidelines": {
       "source": "vercel-labs/agent-skills",

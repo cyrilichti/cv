@@ -25,7 +25,6 @@ yarn-error.log*
 
 .agents/plans/*
 !.agents/plans/.gitkeep
-
 .agents/skills/*
 !.agents/skills/agent-workflows/
 !.agents/skills/pick/
@@ -33,6 +32,7 @@ yarn-error.log*
 !.agents/skills/project/
 !.agents/skills/plan/
 !.agents/skills/write/
+!.agents/skills/hotfix/
 !.agents/skills/refine/
 !.agents/skills/work/
 !.agents/skills/ready/

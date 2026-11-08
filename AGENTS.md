@@ -9,6 +9,7 @@
    | Select the next eligible item (`/next` or `$next`) | `.agents/workflows/next.md` |
    | Resolve a local project directory (`/project` or `$project`) | `.agents/workflows/project.md` |
    | Create or reformulate one item (`/write` or `$write`) | `.agents/workflows/write.md` |
+   | Frame an urgent bug report and start delivery (`/hotfix` or `$hotfix`) | `.agents/workflows/hotfix.md` |
    | Select an item, plan it, and start its implementation (`/pick` or `$pick`) | `.agents/workflows/pick.md` |
    | Create an implementation plan (`/plan` or `$plan`) | `.agents/workflows/plan.md` |
    | Decompose one oversized item into child items (`/refine` or `$refine`) | `.agents/workflows/refine.md` |
