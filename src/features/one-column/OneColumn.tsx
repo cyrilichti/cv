@@ -8,12 +8,14 @@ import A4 from "../../components/A4";
 import ButtonPrint from "../../components/ButtonPrint";
 import { executiveData } from "./data/executive";
 import { useCvDocumentMeta } from "../../hooks/useCvDocumentMeta";
+import { useCvTheme } from "../../hooks/useCvTheme";
 
 function OneColumn() {
   useCvDocumentMeta();
+  const { theme } = useCvTheme();
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 print:h-auto print:p-0 print:bg-white">
+    <div data-theme={theme} className="min-h-screen bg-gray-50 p-4 print:h-auto print:p-0 print:bg-white">
       <A4>
         <Identity identity={executiveData.identity} />
         <main className="flex flex-1">
