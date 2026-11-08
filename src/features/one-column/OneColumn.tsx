@@ -5,7 +5,7 @@ import Profile from "./Profile";
 import Experiences from "./Experiences";
 import Educations from "./Educations";
 import A4 from "../../components/A4";
-import ButtonPrint from "../../components/ButtonPrint";
+import CvActions from "../../components/CvActions";
 import { executiveData } from "./data/executive";
 import { useCvDocumentMeta } from "../../hooks/useCvDocumentMeta";
 
@@ -14,6 +14,7 @@ function OneColumn() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 print:h-auto print:p-0 print:bg-white">
+      <CvActions />
       <A4>
         <Identity identity={executiveData.identity} />
         <main className="flex flex-1">
@@ -26,7 +27,6 @@ function OneColumn() {
           </section>
         </main>
       </A4>
-      <ButtonPrint />
     </div>
   );
 }
