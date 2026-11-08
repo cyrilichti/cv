@@ -11,7 +11,7 @@ function Eductions({ educations }: EducationsProps) {
     <section className="break-inside-avoid py-4">
       <div className="flex items-start gap-5">
         <div className="w-[120px] shrink-0 text-right">
-          <h2 className="text-sm font-bold uppercase leading-tight tracking-normal text-gray-900">
+          <h2 className="text-sm font-bold uppercase leading-tight tracking-normal text-cv-foreground">
             Formations
           </h2>
         </div>
@@ -19,12 +19,12 @@ function Eductions({ educations }: EducationsProps) {
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
             {educations.map((education, index) => (
               <li key={index}>
-                <h3 className="text-sm font-bold uppercase leading-tight tracking-normal text-gray-900">
+                <h3 className="text-sm font-bold uppercase leading-tight tracking-normal text-cv-foreground">
                   {education.title}
                 </h3>
-                <p className="mt-0.5 text-xs leading-relaxed text-gray-700">
+                <p className="mt-0.5 text-xs leading-relaxed text-cv-secondary">
                   {education.school}{" "}
-                  <span className="text-gray-500">• {education.period}</span>
+                  <span className="text-cv-muted">• {education.period}</span>
                 </p>
               </li>
             ))}

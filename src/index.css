@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cv-page {
+  color-scheme: light;
+}
+
+@media screen {
+  .cv-page[data-theme="dark"] {
+    color-scheme: dark;
+    --cv-canvas: #111827;
+    --cv-paper: #1f2937;
+    --cv-foreground: #f3f4f6;
+    --cv-secondary: #d1d5db;
+    --cv-muted: #9ca3af;
+    --cv-accent: #a5b4fc;
+    --cv-border: #6b7280;
+    --cv-soft-border: #4b5563;
+    --cv-subtle: #374151;
+    --cv-control: #e5e7eb;
+    --cv-control-hover: #d1d5db;
+    --cv-control-text: #111827;
+  }
+}
+
+.cv-control {
+  @apply px-4 py-2 rounded-lg shadow-lg transition-colors;
+  background-color: var(--cv-control, #111827);
+  color: var(--cv-control-text, #fff);
+}
+
+.cv-control:hover {
+  background-color: var(--cv-control-hover, #1f2937);
+}
+
+.cv-control:focus-visible {
+  outline: 2px solid var(--cv-accent, #1e2a5e);
+  outline-offset: 3px;
+}
