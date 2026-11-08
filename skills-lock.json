@@ -5,7 +5,7 @@
       "source": "cyrilichti/agent-workflows",
       "sourceType": "github",
       "skillPath": "skills/agent-workflows/SKILL.md",
-      "computedHash": "eb78f4717d34e83bee7f2f009ed58cde4c852030b7aab826b12ea116bf708d2b"
+      "computedHash": "a558e3512470bd435739b799cb33f7f86caf50f078b4bf5fda22ce01083f04eb"
     },
     "api-and-interface-design": {
       "source": "addyosmani/agent-skills",
