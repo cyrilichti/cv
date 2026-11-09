@@ -30,6 +30,7 @@ yarn-error.log*
 !.agents/skills/pick/
 !.agents/skills/next/
 !.agents/skills/project/
+!.agents/skills/sandbox/
 !.agents/skills/plan/
 !.agents/skills/write/
 !.agents/skills/hotfix/
