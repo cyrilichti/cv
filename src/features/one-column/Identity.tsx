@@ -21,7 +21,7 @@ function Identity({ identity }: IdentityProps) {
 
   return (
     <header className="flex flex-shrink-0 items-start py-4">
-      <div className="mr-6 mt-2 h-24 w-24 shrink-0 overflow-hidden rounded-full border border-gray-300 bg-gray-100">
+      <div className="mr-6 mt-2 h-24 w-24 shrink-0 overflow-hidden rounded-full border border-cv-border bg-cv-photo">
         <img
           src={profileImage}
           alt={`${identity.firstname} ${identity.lastname}`}
@@ -30,7 +30,7 @@ function Identity({ identity }: IdentityProps) {
       </div>
 
       <div className="flex-1">
-        <div className="space-y-0 text-xs text-gray-900">
+        <div className="space-y-0 text-xs text-cv-primary">
           <div className="flex flex-wrap items-center gap-x-3">
             <a
               className="inline-flex items-center gap-1.5 hover:underline"
@@ -61,10 +61,10 @@ function Identity({ identity }: IdentityProps) {
           </a>
         </div>
 
-        <h1 className="py-2 text-2xl font-bold uppercase leading-none tracking-wide text-blue-dark">
+        <h1 className="py-2 text-2xl font-bold uppercase leading-none tracking-wide text-cv-accent">
           {identity.firstname} {identity.lastname}
         </h1>
-        <p className="text-sm text-gray-900">{identity.post}</p>
+        <p className="text-sm text-cv-primary">{identity.post}</p>
       </div>
     </header>
   );
