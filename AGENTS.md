@@ -8,6 +8,7 @@
    | --- | --- |
    | Select the next eligible item (`/next` or `$next`) | `.agents/workflows/next.md` |
    | Resolve a local project directory (`/project` or `$project`) | `.agents/workflows/project.md` |
+   | Prepare or tear down an isolated environment (`/sandbox` or `$sandbox`) | `.agents/workflows/sandbox.md` |
    | Create or reformulate one item (`/write` or `$write`) | `.agents/workflows/write.md` |
    | Frame an urgent bug report and start delivery (`/hotfix` or `$hotfix`) | `.agents/workflows/hotfix.md` |
    | Select an item, plan it, and start its implementation (`/pick` or `$pick`) | `.agents/workflows/pick.md` |
