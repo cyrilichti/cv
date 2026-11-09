@@ -11,6 +11,7 @@ import { defaultData } from "./data/default";
 function Detailled() {
   return (
     <div className="min-h-screen bg-gray-50 p-4 print:h-auto print:p-0 print:bg-white">
+      <ButtonPrint />
       <A4 multiple>
         <Identity identity={defaultData.identity} />
         <main className="flex flex-1 py-6">
@@ -28,7 +29,6 @@ function Detailled() {
           </section>
         </main>
       </A4>
-      <ButtonPrint />
     </div>
   );
 }

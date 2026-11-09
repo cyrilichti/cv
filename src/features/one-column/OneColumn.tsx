@@ -14,6 +14,7 @@ function OneColumn() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 print:h-auto print:p-0 print:bg-white">
+      <ButtonPrint />
       <A4>
         <Identity identity={executiveData.identity} />
         <main className="flex flex-1">
@@ -26,7 +27,6 @@ function OneColumn() {
           </section>
         </main>
       </A4>
-      <ButtonPrint />
     </div>
   );
 }
