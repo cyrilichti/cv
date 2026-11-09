@@ -1,5 +1,5 @@
 import A4 from "../../components/A4";
-import ButtonPrint from "../../components/ButtonPrint";
+import CvActions from "../../components/CvActions";
 import Identity from "./Identity";
 import Profile from "./Profile";
 import DetailedExperiences from "./DetailedExperiences";
@@ -11,7 +11,7 @@ import { defaultData } from "./data/default";
 function Detailled() {
   return (
     <div className="min-h-screen bg-gray-50 p-4 print:h-auto print:p-0 print:bg-white">
-      <ButtonPrint />
+      <CvActions />
       <A4 multiple>
         <Identity identity={defaultData.identity} />
         <main className="flex flex-1 py-6">
