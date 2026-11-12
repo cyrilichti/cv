@@ -16,7 +16,7 @@ function Experiences({ experiences }: ExperiencesProps) {
     <CvSection title="Expériences">
       <div className="space-y-5">
         {experiences.map((experience, index) => (
-          <div className="space-y-3" key={index}>
+          <div className="space-y-3 print:break-inside-avoid" key={index}>
             <div className="flex flex-col gap-1">
               <div>
                 <h3 className="text-sm font-bold uppercase leading-tight tracking-normal text-gray-900">

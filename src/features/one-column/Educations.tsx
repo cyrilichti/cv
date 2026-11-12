@@ -13,7 +13,7 @@ function Eductions({ educations }: EducationsProps) {
     <CvSection title="Formations">
       <ul className="grid grid-cols-1 gap-y-3">
         {educations.map((education, index) => (
-          <li key={index}>
+          <li key={index} className="print:break-inside-avoid">
             <h3 className="text-sm font-bold uppercase leading-tight tracking-normal text-gray-900">
               {education.title}
             </h3>
