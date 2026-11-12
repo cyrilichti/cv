@@ -20,8 +20,8 @@ function Identity({ identity }: IdentityProps) {
   const addressLine = `${identity.address} ${identity.zip} ${identity.city}`;
 
   return (
-    <header className="flex flex-shrink-0 items-start py-4">
-      <div className="mr-6 mt-2 h-24 w-24 shrink-0 overflow-hidden rounded-full border border-gray-300 bg-gray-100">
+    <header className="flex flex-col gap-4 py-4 sm:flex-row sm:gap-6 print:flex-row print:gap-6">
+      <div className="mt-2 h-24 w-24 shrink-0 overflow-hidden rounded-full border border-gray-300 bg-gray-100">
         <img
           src={profileImage}
           alt={`${identity.firstname} ${identity.lastname}`}
@@ -29,7 +29,7 @@ function Identity({ identity }: IdentityProps) {
         />
       </div>
 
-      <div className="flex-1">
+      <div className="min-w-0 flex-1">
         <div className="space-y-0 text-xs text-gray-900">
           <div className="flex flex-wrap items-center gap-x-3">
             <a
